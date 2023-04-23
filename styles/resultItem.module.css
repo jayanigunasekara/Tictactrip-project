@@ -1,0 +1,11 @@
+.result_item_style{
+    padding: 1rem 2rem;
+    background-color: var(--colorWhite);
+    border-bottom: 1px solid var(--colorGrey);
+    cursor: pointer;
+    
+}
+
+.result_item_style:hover{
+    background-color: var(--colorGrey);
+}

@@ -1,0 +1,47 @@
+.input_wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 59rem;
+}
+
+.input_search{
+    pointer-events: auto;
+    z-index: 1;
+    width: 100%;
+    padding: 0 1.5rem;
+    border: 0 none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: var(--colorPrimary);
+    min-height: 3.5rem;
+    max-width: 59rem;
+}
+
+.input_search_icon {
+    pointer-events: auto;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 2rem;
+    background-color: var(--colorLightBlue);
+    background-image: url('/images/magnifier.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5rem;
+    padding: 0;
+    border: 0 none;
+    text-indent: -62.5rem;
+    line-height: 1px;
+    transition: .25s; 
+}
+
+.input_search_icon:hover{
+    background-color: var(--colorDarkBlue);
+}
+

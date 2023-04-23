@@ -1,74 +1,72 @@
-import React, { useEffect, useState } from 'react'
-import {FaSearch} from "react-icons/fa"
+import { useEffect, useState } from "react";
+import styles from "../../styles/searchBar.module.css";
 
-const index = ({ setResults ,selectedLocation}) => {
-    const [input, setInput] = useState("");
+const SearchBar = ({
+  handleInputValueFocused /* Input field focused method */,
+  handleKeyDown,
+  setResults /* Results from the key search */,
+  inputFocusStatus /* status of the input field focus */,
+}) => {
+  /* method to Fetch and filter the data */
+  const fetchData = (value) => {
+    fetch("https://api.comparatrip.eu/cities/autocomplete/?q=" + value)
+      .then((response) => response.json())
+      .then((data) => {
+        const results = data.filter((location) => {
+          return (
+            value &&
+            location &&
+            location.local_name &&
+            location.local_name.toLowerCase().includes(value)
+          );
+        });
 
-    
-    /* Fetch and filter the data */
-    const fetchData = (value)=>{
-        fetch("https://api.comparatrip.eu/cities/autocomplete/?q="+ value)
-        .then((response)=>response.json())
-        .then((data)=>{
+        setResults(results);
+      })
+      .catch((e) => console.log(e));
+  };
 
-            console.log("Successfully fetched the data");
+  /* user input text */
+  const [inputText, setInputText] = useState("");
 
-            const results = data.filter((location) => {
-                return (
-                  value &&
-                  location &&
-                  location.local_name &&
-                  location.local_name.toLowerCase().includes(value)
-                );
-              });
-              console.log(results);
-              setResults(results);
+  /* retrieve data according to the input text  */
+  const handleInputChange = (inputVal) => {
+    setInputText(inputVal);
+    fetchData(inputVal.toLowerCase());
+  };
 
-        })
-        .catch(e => console.log(e));
+  /* trigger the Enter key  */
+  const inputHandleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleKeyDown();
     }
+  };
 
-    const handleChange = (value)=>{
-
-        // setInput(value)
-        // fetchData(value)
-
-
-        
-        if(selectedLocation && selectedLocation !== "" ){
-            setInput(selectedLocation)
-            console.log(input);
-        }else{
-            setInput(value)
-            fetchData(value)
-        }
-     
+  /* executes everytime the input focus value changes */
+  useEffect(() => {
+    if (!inputFocusStatus) {
+      setInputText("");
     }
-
-    
-
+  }, [inputFocusStatus]);
 
   return (
-
-
-    
-    <div className="input-group">
-        <div className="form-outline">
-            <input 
-                type="search" 
-                id="form1" 
-                className="form-control" 
-                placeholder={input} 
-                value={input} 
-                onChange={(e) => handleChange(e.target.value)} />
-            
-        </div>
-        <button type="button" className="btn btn-primary">
-            <FaSearch/>
-        </button>
+    <div className={styles.input_wrapper}>
+      <input
+        className={styles.input_search}
+        placeholder="Une destination, demande"
+        type="search"
+        value={inputText}
+        onFocus={() => handleInputValueFocused()}
+        onChange={(e) => handleInputChange(e.target.value)}
+        onKeyDown={(e) => inputHandleKeyDown(e)}
+      ></input>
+      <input
+        className={styles.input_search_icon}
+        type="submit"
+        onClick={() => handleKeyDown()}
+      />
     </div>
-    
-  )
-}
+  );
+};
 
-export default index
+export default SearchBar;

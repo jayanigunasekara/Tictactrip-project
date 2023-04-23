@@ -1,0 +1,12 @@
+.container{
+    background-color: var(--colorSecondary);
+    height: 100vh;
+}
+
+.search_input_background {
+    background-color: var(--colorPrimary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}

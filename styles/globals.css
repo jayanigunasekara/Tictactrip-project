@@ -1,19 +1,32 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+  font-family: 'Avenir-Medium';
+  src: url('/fonts/Avenir-Medium.ttf');
+}
+
 :root{
   --colorPrimary :#0C131F;
   --colorSecondary : #F3F3F8;
+  --colorLightBlue: #8de8fe;
+  --colorDarkBlue: #03b2cb;
+  --colorWhite: #ffffff;
+  --colorGrey: #e9e9e9;
+
 }
 
-
+html,
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Avenir-Medium','Courier New', Courier, monospace;
+  font-size: 16px;
+  background-color: var(--colorSecondary);
 }
 
-.container{
-  margin-left: 10%;
-  margin-right: 10%;
-}
+
+
 
 
 

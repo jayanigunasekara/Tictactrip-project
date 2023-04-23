@@ -1,9 +1,15 @@
 .myNavbar{
     justify-content: center; 
-   
+    color: #F3F3F4;
+    font-size: 16px;
+    padding: 0px 12px;
     
 
 
+}
+
+.myheader{
+    background-color: #0C131F;
 }
 
 

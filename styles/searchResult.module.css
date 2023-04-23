@@ -1,0 +1,26 @@
+.search_result_wrapper {
+    max-width: 59rem; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2.5rem;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .search_result_style{
+    border-radius: .875rem;
+    width: calc(100% - 3rem);
+    background-color: var(--colorWhite);
+    max-height: 20rem;
+    z-index: 1;
+    padding: 1rem;
+    overflow-y: auto;
+ }
+ 
+ .heading_text_style{
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #cb6e03;
+    border-bottom: 1px solid var(--colorPrimary);
+ }
