@@ -9,12 +9,15 @@
  
  .search_result_style{
     border-radius: .875rem;
-    width: calc(100% - 3rem);
+    /* width: calc(100% - 3rem); */
+    width: 800px;
     background-color: var(--colorWhite);
     max-height: 20rem;
     z-index: 1;
     padding: 1rem;
     overflow-y: auto;
+    position: absolute;
+    top: 110px;
  }
  
  .heading_text_style{

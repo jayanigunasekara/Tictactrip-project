@@ -50,7 +50,10 @@ const SearchBar = ({
   }, [inputFocusStatus]);
 
   return (
-    <div className={styles.input_wrapper}>
+    <div
+      className={styles.input_wrapper}
+      style={inputFocusStatus ? { position: "absolute", top: "40px" } : {}}
+    >
       <input
         className={styles.input_search}
         placeholder="Une destination, demande"

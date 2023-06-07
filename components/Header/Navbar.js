@@ -3,6 +3,9 @@ import Image from "next/image";
 import styles from "../../styles/Header.module.css";
 import SncfConnect from "../../public/images/SncfConnect.png";
 import { SiYourtraveldottv } from "react-icons/si";
+import { ImTicket } from "react-icons/im";
+import { BsBookHalf } from "react-icons/bs";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = () => {
   return (
@@ -20,33 +23,52 @@ const Navbar = () => {
     >
       <i className="fas fa-bars"></i>
     </button>  */}
-        <div className={`collapse navbar-collapse ${styles.myNavbar}`}>
+        <div className={`collapse navbar-collapse  ${styles.myNavbar}`}>
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
-                className="nav-link "
+                className="nav-link p-4 "
                 aria-current="page"
                 href="#"
-                style={{ color: "#F3F3F4" }}
+                style={{
+                  color: "#F3F3F4",
+                }}
               >
                 <SiYourtraveldottv
-                  style={{ paddingRight: "4px", fontSize: "larger" }}
+                  style={{ paddingRight: "5px", fontSize: "26px" }}
                 />
                 Voyager
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#F3F3F4" }}>
+              <a
+                className="nav-link p-4 "
+                href="#"
+                style={{ color: "#F3F3F4" }}
+              >
+                <ImTicket style={{ paddingRight: "5px", fontSize: "26px" }} />
                 Billets
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#F3F3F4" }}>
+              <a
+                className="nav-link p-4 "
+                href="#"
+                style={{ color: "#F3F3F4" }}
+              >
+                <BsBookHalf style={{ paddingRight: "5px", fontSize: "26px" }} />
                 Offres
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "#F3F3F4" }}>
+              <a
+                className="nav-link p-4 "
+                href="#"
+                style={{ color: "#F3F3F4" }}
+              >
+                <MdAccountCircle
+                  style={{ paddingRight: "5px", fontSize: "26px" }}
+                />
                 Compte
               </a>
             </li>

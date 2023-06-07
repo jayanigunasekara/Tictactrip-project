@@ -1,5 +1,7 @@
 import styles from "../styles/Home.module.css";
 import SearchBar from "@/components/SearchBar";
+import Header from "@/components/Header";
+import Main from "@/components/Main";
 import SearchResults from "@/components/SearchResults";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -49,25 +51,29 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.search_input_background}>
-        {/* If input fied is focused it enables the background  */}
-        {isInputFocused && (
-          <BackDrop handleBackdropClicked={onBackdropClicked} />
+    <>
+      <div className={styles.container}>
+        <Header />
+        <Main />
+        <div className={styles.search_input_background}>
+          {/* If input fied is focused it enables the background  */}
+          {isInputFocused && (
+            <BackDrop handleBackdropClicked={onBackdropClicked} />
+          )}
+          <SearchBar
+            handleInputValueFocused={handleInputValueFocused}
+            handleKeyDown={handleinputKeyDown}
+            setResults={setResults}
+            inputFocusStatus={isInputFocused}
+          />
+        </div>
+        {results.length > 0 && (
+          <SearchResults
+            results={results}
+            handleSearchItemClick={fromLocationSelectHandle}
+          />
         )}
-        <SearchBar
-          handleInputValueFocused={handleInputValueFocused}
-          handleKeyDown={handleinputKeyDown}
-          setResults={setResults}
-          inputFocusStatus={isInputFocused}
-        />
       </div>
-      {results.length > 0 && (
-        <SearchResults
-          results={results}
-          handleSearchItemClick={fromLocationSelectHandle}
-        />
-      )}
-    </div>
+    </>
   );
 }
