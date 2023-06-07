@@ -57,7 +57,7 @@ export default function Home() {
         )}
         <SearchBar
           handleInputValueFocused={handleInputValueFocused}
-          handleinputKeyDown={handleinputKeyDown}
+          handleKeyDown={handleinputKeyDown}
           setResults={setResults}
           inputFocusStatus={isInputFocused}
         />
