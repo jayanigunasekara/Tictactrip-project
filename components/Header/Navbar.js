@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../../styles/Header.module.css";
-import SncfConnect from "../../public/images/SncfConnect.png";
+import SncfConnect from "../../public/images/sncfConnect.png";
 import { SiYourtraveldottv } from "react-icons/si";
 import { ImTicket } from "react-icons/im";
 import { BsBookHalf } from "react-icons/bs";
