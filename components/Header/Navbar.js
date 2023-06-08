@@ -12,17 +12,7 @@ const Navbar = () => {
     <nav className={`navbar navbar-expand-lg ${styles.myheader}`} id="navbar">
       <div className="container-fluid">
         <Image src={SncfConnect} alt="Sncf connect"></Image>
-        {/* <button
-      className="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i className="fas fa-bars"></i>
-    </button>  */}
+
         <div className={`collapse navbar-collapse  ${styles.myNavbar}`}>
           <ul className="navbar-nav">
             <li className="nav-item">
